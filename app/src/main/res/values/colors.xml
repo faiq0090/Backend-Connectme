@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="brown_primary">#795548</color>
+    <color name="brown_dark">#5D4037</color>
+    <color name="brown_light">#A1887F</color>
+    <color name="text_dark">#333333</color>
+    <color name="text_hint">#888888</color>
+    <color name="divider">#E0E0E0</color>
+
+    <color name="brown">#654321</color>
+    <color name="nav_icon_color">#808080</color>
+    <color name="nav_text_color">#808080</color>
+
+
 </resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomBottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconSize">24dp</item>
+        <item name="labelVisibilityMode">selected</item> <!-- Corrected value -->
+        <item name="itemTextAppearanceActive">@style/NoText</item>
+        <item name="itemTextAppearanceInactive">@style/NoText</item>
+    </style>
+
+    <style name="NoText">
+        <item name="android:textSize">0sp</item>
+    </style>
+
+</resources>
