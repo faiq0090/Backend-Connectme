@@ -91,6 +91,7 @@
             android:textAllCaps="false"
             android:padding="14dp"
             app:cornerRadius="4dp"
+            android:textColor="@color/white"
             app:backgroundTint="@color/brown_dark" />
 
         <!-- Or continue with text -->

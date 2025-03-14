@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@color/white">
+
+        <!-- Header with title and Done button -->
+        <RelativeLayout
+            android:id="@+id/header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btn_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:text="Done"
+                android:textColor="@color/brown"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <!-- Profile Picture -->
+        <RelativeLayout
+            android:id="@+id/profile_image_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header_layout"
+            android:layout_marginTop="24dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/circle_pink_background" />
+
+            <ImageView
+                android:id="@+id/camera_icon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/camera" />
+        </RelativeLayout>
+
+        <!-- Name Display -->
+        <TextView
+            android:id="@+id/profile_name_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_image_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Olivia Daniel"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Name Field -->
+        <TextView
+            android:id="@+id/name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_name_display"
+            android:layout_marginTop="32dp"
+            android:text="Name"
+            android:textColor="@color/brown"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/name_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_label"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext_bg"
+            android:hint="Enter your name"
+            android:minHeight="48dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="Olivia Daniel"
+            android:textColor="@color/dark_gray"
+            android:textSize="16sp" />
+
+        <!-- Username Field -->
+        <TextView
+            android:id="@+id/username_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_input"
+            android:layout_marginTop="16dp"
+            android:text="Username"
+            android:textColor="@color/brown"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/username_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/username_label"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext_bg"
+            android:hint="Enter your username"
+            android:minHeight="48dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="OliviaD"
+            android:textColor="@color/dark_gray"
+            android:textSize="16sp" />
+
+        <!-- Contact Number Field -->
+        <TextView
+            android:id="@+id/contact_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/username_input"
+            android:layout_marginTop="16dp"
+            android:text="Contact Number"
+            android:textColor="@color/brown"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/contact_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contact_label"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext_bg"
+            android:hint="Enter your contact number"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="+42 7412 5443058"
+            android:textColor="@color/dark_gray"
+            android:textSize="16sp" />
+
+        <!-- Bio Field -->
+        <TextView
+            android:id="@+id/bio_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contact_input"
+            android:layout_marginTop="16dp"
+            android:text="Bio"
+            android:textColor="@color/brown"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/bio_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bio_label"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext_bg"
+            android:hint="Write something about yourself"
+            android:minHeight="48dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="Just an average 14 year old"
+            android:textColor="@color/dark_gray"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</ScrollView>
