@@ -1,4 +1,3 @@
-
 package com.faiq.i210759
 
 import android.content.Intent
@@ -10,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class login : AppCompatActivity() {
 
@@ -17,12 +17,18 @@ class login : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // Enable edge-to-edge if needed
+        super.onCreate(savedInstanceState) // ✅ FIXED HERE
         setContentView(R.layout.activity_login)
 
         // Initialize Firebase Authentication
         auth = FirebaseAuth.getInstance()
+
+        // Check if a user is already logged in, if so, redirect
+        val currentUser: FirebaseUser? = auth.currentUser
+        if (currentUser != null) {
+            navigateToHome()
+            return // Stop execution to prevent showing login screen
+        }
 
         // References to UI elements
         val etUsername = findViewById<EditText>(R.id.etUsername)
@@ -57,13 +63,7 @@ class login : AppCompatActivity() {
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        // Login successful: redirect to the Home screen
-                        // Assumed that MainActivity hosts your Home Fragment.
-                        val intent = Intent(this, bottom_navigation::class.java)
-                        // Clear previous activities from the stack.
-                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-                        startActivity(intent)
-                        finish()
+                        navigateToHome()
                     } else {
                         // Login failed: show an error message.
                         Toast.makeText(this, "Login failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
@@ -82,5 +82,13 @@ class login : AppCompatActivity() {
             // You can implement a forgot password flow here.
             Toast.makeText(this, "Forgot password functionality is not implemented yet.", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    // Redirect to the home screen (bottom navigation)
+    private fun navigateToHome() {
+        val intent = Intent(this, bottom_navigation::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+        finish()
     }
 }
