@@ -34,6 +34,7 @@ class bottom_navigation : AppCompatActivity() {
             R.id.nav_search -> Search()
             R.id.nav_profile -> Profile()
             R.id.nav_contacts -> Contact()
+            R.id.nav_add->      Post()
 
             else -> return false
         }

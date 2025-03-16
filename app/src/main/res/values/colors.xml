@@ -14,6 +14,10 @@
     <color name="dark_gray">#696969</color>
     <color name="pink_background">#E8A8A8</color>
 
+    <color name="text_secondary">#a0a0a0</color>
+    <color name="button_brown">#6b4f38</color>
+    <color name="switch_camera_bg">#a59588</color>
+
 
 
 </resources>
